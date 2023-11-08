@@ -1,10 +1,27 @@
 package org.myexample;
 
+import lombok.EqualsAndHashCode;
+
+import java.util.Objects;
+
 public class Kitten {
 
-    private  Gender gender;
+    private Gender gender;
     private String name;
     private int age;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kitten kitten = (Kitten) o;
+        return age == kitten.age && gender == kitten.gender && Objects.equals(name, kitten.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gender, name, age);
+    }
 
     public enum Gender {
         MALE,

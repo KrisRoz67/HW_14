@@ -5,10 +5,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         KittenStatisticsFunctional func = new KittenStatisticsFunctional();
-        KittenStatistics stat=  new KittenStatistics();
-        List <Kitten> kittens = List.of(new Kitten("Murzik", Kitten.Gender.MALE,16),
-                new Kitten("Mia", Kitten.Gender.FEMALE,13),
-                new Kitten("Ryzhik", Kitten.Gender.FEMALE,11));
+        KittenStatistics stat = new KittenStatistics();
+        List<Kitten> kittens = List.of(new Kitten("Murzik", Kitten.Gender.MALE, 16),
+                new Kitten("Mia", Kitten.Gender.FEMALE, 13),
+                new Kitten("Ryzhik", Kitten.Gender.FEMALE, 11));
         func.setKittens(kittens);
         stat.setKittens(kittens);
         System.out.println("------------With streams----------");
@@ -21,7 +21,7 @@ public class Main {
         System.out.println("-------First kitten with given name -------------");
         System.out.println(func.findFirstKittenWithGivenName("Mia"));
         System.out.println("-------Kittens between ages -------------");
-        System.out.println(func.findKittensBetweenAges(10,12));
+        System.out.println(func.findKittensBetweenAges(10, 12));
         System.out.println("------ Kittens with given gender -------------");
         System.out.println(func.findKittensAccordingToGender(Kitten.Gender.FEMALE));
         System.out.println("------ The oldest kitten -------------");
@@ -39,7 +39,7 @@ public class Main {
         System.out.println("-------First kitten with given name -------------");
         System.out.println(stat.findFirstKittenWithGivenName("Mia"));
         System.out.println("-------Kittens between ages -------------");
-        System.out.println(stat.findKittensBetweenAges(10,12));
+        System.out.println(stat.findKittensBetweenAges(10, 12));
         System.out.println("------ Kittens with given gender -------------");
         System.out.println(stat.findKittensAccordingToGender(Kitten.Gender.FEMALE));
         System.out.println("------ The oldest kitten -------------");

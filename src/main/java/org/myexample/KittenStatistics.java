@@ -54,7 +54,7 @@ public class KittenStatistics {
         }
 
         return oldestKitten;
-}
+    }
 
     /**
      * Находит самых младших котят в списке.
@@ -64,7 +64,7 @@ public class KittenStatistics {
      */
     public List<Kitten> findYoungestKittens() {
         int min = kittens.get(0).getAge();
-        List <Kitten> youngestKittens =new ArrayList<>();
+        List<Kitten> youngestKittens = new ArrayList<>();
         for (Kitten value : kittens) {
             int age = value.getAge();
             if (age < min) {
@@ -73,7 +73,7 @@ public class KittenStatistics {
         }
         for (Kitten kitten : kittens) {
             if (kitten.getAge() == min) {
-       youngestKittens.add(kitten);
+                youngestKittens.add(kitten);
             }
         }
 
@@ -108,7 +108,7 @@ public class KittenStatistics {
     public List<Kitten> findKittensBetweenAges(int minAge, int maxAge) {
         List<Kitten> listOfKittensBetweenAges = new ArrayList<>();
         for (Kitten kitten : kittens) {
-            if (kitten.getAge()>= minAge && kitten.getAge()<= maxAge) {
+            if (kitten.getAge() >= minAge && kitten.getAge() <= maxAge) {
                 listOfKittensBetweenAges.add(kitten);
             }
         }
@@ -124,11 +124,11 @@ public class KittenStatistics {
      * @return Первый котенок с указанным именем в виде Optional.
      */
     public Optional<Kitten> findFirstKittenWithGivenName(String givenName) {
-    Optional<Kitten> kittenWthGivenName = Optional.empty();
+        Optional<Kitten> kittenWthGivenName = Optional.empty();
         for (Kitten kitten : kittens) {
-            if (kitten.getName().equals(givenName)){
-            kittenWthGivenName =Optional.of(kitten);
-            break;
+            if (kitten.getName().equals(givenName)) {
+                kittenWthGivenName = Optional.of(kitten);
+                break;
             }
         }
         return kittenWthGivenName;
@@ -143,12 +143,12 @@ public class KittenStatistics {
     public List<Kitten> kittensSortedByAgeYoungerFirst() {
         List<Kitten> kittens1 = new ArrayList<>(kittens);
         for (int i = 0; i < kittens1.size(); i++) {
-            for( int j =1 ; j < kittens1.size()-i ; j++ ){
-                Kitten kitten1 = kittens1.get(j-1);
-                Kitten kitten2= kittens1.get(j);
-                if(kitten1.getAge()> kitten2.getAge()){
-                    kittens1.set(j-1,kitten2);
-                    kittens1.set(j,kitten1);
+            for (int j = 1; j < kittens1.size() - i; j++) {
+                Kitten kitten1 = kittens1.get(j - 1);
+                Kitten kitten2 = kittens1.get(j);
+                if (kitten1.getAge() > kitten2.getAge()) {
+                    kittens1.set(j - 1, kitten2);
+                    kittens1.set(j, kitten1);
                 }
             }
         }
@@ -161,19 +161,19 @@ public class KittenStatistics {
      *
      * @return Список котят, отсортированный по возрасту (старшие впереди).
      */
-    public List<Kitten> kittensSortedByAgeOlderFirst(){
+    public List<Kitten> kittensSortedByAgeOlderFirst() {
         List<Kitten> kittens1 = new ArrayList<>(kittens);
         for (int i = 0; i < kittens1.size(); i++) {
-            for( int j =1 ; j < kittens1.size()-i ; j++ ){
-                 Kitten kitten1 = kittens1.get(j-1);
-                 Kitten kitten2= kittens1.get(j);
-                 if(kitten1.getAge()< kitten2.getAge()){
-                     kittens1.set(j-1,kitten2);
-                     kittens1.set(j,kitten1);
-                 }
+            for (int j = 1; j < kittens1.size() - i; j++) {
+                Kitten kitten1 = kittens1.get(j - 1);
+                Kitten kitten2 = kittens1.get(j);
+                if (kitten1.getAge() < kitten2.getAge()) {
+                    kittens1.set(j - 1, kitten2);
+                    kittens1.set(j, kitten1);
                 }
             }
+        }
         return kittens1;
 
-}
+    }
 }
