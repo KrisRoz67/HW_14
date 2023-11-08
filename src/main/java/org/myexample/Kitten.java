@@ -2,7 +2,7 @@ package org.myexample;
 
 public class Kitten {
 
-    private Gender gender;
+    private  Gender gender;
     private String name;
     private int age;
 
@@ -27,5 +27,15 @@ public class Kitten {
 
     public Gender getGender() {
         return gender;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Kitten{" +
+                "gender=" + gender +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
