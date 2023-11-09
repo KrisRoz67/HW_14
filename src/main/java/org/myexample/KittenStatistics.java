@@ -40,20 +40,15 @@ public class KittenStatistics {
      */
     public Optional<Kitten> findOldestKitten() {
         int max = 0;
-        Optional<Kitten> oldestKitten = Optional.empty();
+        Kitten kitten = null;
         for (Kitten value : kittens) {
             int age = value.getAge();
             if (age > max) {
                 max = age;
+                kitten = value;
             }
         }
-        for (Kitten kitten : kittens) {
-            if (kitten.getAge() == max) {
-                oldestKitten = Optional.of(kitten);
-            }
-        }
-
-        return oldestKitten;
+        return Optional.ofNullable(kitten);
     }
 
     /**
@@ -69,11 +64,10 @@ public class KittenStatistics {
             int age = value.getAge();
             if (age < min) {
                 min = age;
-            }
-        }
-        for (Kitten kitten : kittens) {
-            if (kitten.getAge() == min) {
-                youngestKittens.add(kitten);
+                youngestKittens.clear();
+                youngestKittens.add(value);
+            } else if (age == min) {
+                youngestKittens.add(value);
             }
         }
 

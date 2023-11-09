@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         KittenStatisticsFunctional func = new KittenStatisticsFunctional();
         KittenStatistics stat = new KittenStatistics();
-        List<Kitten> kittens = List.of(new Kitten("Murzik", Kitten.Gender.MALE, 16),
-                new Kitten("Mia", Kitten.Gender.FEMALE, 13),
-                new Kitten("Ryzhik", Kitten.Gender.FEMALE, 11));
+        List<Kitten> kittens = List.of(new Kitten("Murzik", Kitten.Gender.MALE, 11),
+                new Kitten("Mia", Kitten.Gender.FEMALE, 5),
+                new Kitten("Ryzhik", Kitten.Gender.FEMALE, 6));
         func.setKittens(kittens);
         stat.setKittens(kittens);
         System.out.println("------------With streams----------");
@@ -31,8 +31,8 @@ public class Main {
         System.out.println("-----------------");
         System.out.println("-----Without streams-------------");
         System.out.println("-------Kittens average age -------------");
-//        System.out.println(stat.findKittensAverageAge());
-        System.out.println("-------Sorted by age (younger first ) -------------");
+        System.out.println(stat.findKittensAverageAge());
+        System.out.println("-------Sorted by age (younger first )------------");
         System.out.println(stat.kittensSortedByAgeYoungerFirst());
         System.out.println("-------Sorted by age (older first ) -------------");
         System.out.println(stat.kittensSortedByAgeOlderFirst());

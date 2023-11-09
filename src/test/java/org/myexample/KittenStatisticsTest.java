@@ -1,6 +1,5 @@
 package org.myexample;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +13,8 @@ class KittenStatisticsTest {
 
     KittenStatistics kittenStatic = new KittenStatistics();
     List<Kitten> kittens = new ArrayList<>(List.of(
-            new Kitten("Bob", Kitten.Gender.MALE, 8),
             new Kitten("Alice", Kitten.Gender.FEMALE, 3),
+            new Kitten("Bob", Kitten.Gender.MALE, 8),
             new Kitten("Coconut", Kitten.Gender.MALE, 7)));
 
     @BeforeEach
